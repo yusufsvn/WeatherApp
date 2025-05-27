@@ -1,0 +1,157 @@
+.example-container {
+    height: 100%;
+    /* Tüm ekran yüksekliği */
+    width: 100%;
+    /* Tüm genişlik */
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f5f5;
+}
+
+.left-content {
+    width: 370px;
+    background-color: #3f51b5;
+    color: white;
+    padding: 16px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.right-content {
+    flex: 1;
+    padding: 16px;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    color: #030307;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: url("/images.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.example-button-row {
+  display: flex;
+  justify-content: center; // Ortala (sol için "flex-start", sağ için "flex-end")
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  button {
+    background-color: #3f51b5;
+    color: white;
+    padding: 8px 24px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #303f9f;
+    }
+
+    &:active {
+      background-color: #283593;
+    }
+  }
+}
+
+
+
+.top-drawer-container {
+  height: 37%;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.top-drawer {
+  width: 350px;
+  background: #a6b6c8; /* koyu mavi */
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+
+.top-drawer-content {
+  width: 750px;
+  padding: 20px;
+  background: #c12d2d;
+  overflow: auto;
+}
+
+
+.location-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: center;
+}
+
+.weather-div {
+  display: flex;
+  justify-content: center; /* ortala */
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.weather-icon {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.description {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+.weather-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* responsive sütunlar */
+  gap: 16px;
+}
+
+.weather-info-item {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.weather-info-item .label {
+  display: block;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.weather-info-item .value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.graph-container {
+  width: 100%;
+  height: 100%;
+  
+}

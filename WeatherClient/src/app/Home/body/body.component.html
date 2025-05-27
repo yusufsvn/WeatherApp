@@ -1,0 +1,104 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" class="left-content" opened>
+    <mat-card appearance="raised" class="header">
+      <mat-card-content>Hava durumu hakkında bilgi alın</mat-card-content>
+    </mat-card>
+
+    <form class="example-form" (ngSubmit)="getWeather()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Şehir</mat-label>
+        <input #input type="text" placeholder="Şehir seçin" matInput [formControl]="myControl" [matAutocomplete]="auto"
+          (input)="filter()" (focus)="filter()">
+        <mat-autocomplete requireSelection #auto="matAutocomplete">
+          @for (option of filteredOptions; track option) {
+          <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <div class="example-button-row">
+        <button mat-button type="submit">Ara</button>
+      </div>
+
+      <div class="example-button-row">
+        <button mat-button type="button" (click)="sendLocation()">Konumumu kullan</button>
+      </div>
+    </form>
+
+
+  </mat-drawer>
+  <mat-drawer-content class="rightContent">
+
+    <mat-drawer-container class="top-drawer-container">
+      
+      <!-- blue area -->
+      <mat-drawer mode="side" opened class="top-drawer">
+        <h1 class="location-title">{{weatherData?.resolvedAddress}}</h1>
+
+        <div class="weather-div">
+          <p class="temp">{{weatherData?.currentConditions?.temp}}</p>
+          <mat-icon class="weather-icon">{{getWeatherIcon()}}</mat-icon>
+        </div>
+
+        <p class="description">{{weatherData?.days?.[0]?.description}}</p>
+      </mat-drawer>
+      
+      <!-- red area -->
+      <mat-drawer-content class="top-drawer-content">
+        <div class="weather-info-grid">
+          <div class="weather-info-item">
+            <span class="label">UV Index</span>
+            <span class="value">{{weatherData?.currentConditions?.uvindex}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Rüzgar</span>
+            <span class="value">{{weatherData?.currentConditions?.windspeed}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Hissedilen</span>
+            <span class="value">{{weatherData?.currentConditions?.feelslike}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Nem</span>
+            <span class="value">{{weatherData?.currentConditions?.humidity}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Ay evresi</span>
+            <span class="value">{{weatherData?.currentConditions?.moonphase}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Basınç</span>
+            <span class="value">{{weatherData?.currentConditions?.pressure}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Görüş</span>
+            <span class="value">{{weatherData?.currentConditions?.visibility}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Yağış olasılığı</span>
+            <span class="value">{{weatherData?.days?.[0]?.precipprob}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Gün doğumu</span>
+            <span class="value">{{weatherData?.currentConditions?.sunrise}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Gün batımı</span>
+            <span class="value">{{weatherData?.currentConditions?.sunset}}</span>
+          </div>
+          <div class="weather-info-item">
+            <span class="label">Max-Min sıcaklık</span>
+            <span class="value">{{weatherData?.days?.[0]?.tempmax}}-{{weatherData?.days?.[0]?.tempmin}}</span>
+          </div>
+
+        </div>
+
+      </mat-drawer-content>
+    </mat-drawer-container>
+
+    <div class="graph-container">
+      <app-chart [hours]="Hours"></app-chart>
+    </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>
