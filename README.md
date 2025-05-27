@@ -9,6 +9,9 @@ This project is a modern weather app that displays 1-day weather information for
 - **Hourly Wind Graph:** A graph visualizing wind speed changes.
 - **Fast and Efficient API Calls:** Redis caching saves API calls and speeds up data retrieval.
 
+## How to works redis?
+If the weather has not been queried before, it gets data from the weather API and writes it to redis. In subsequent queries, if there is weather data in the redis, it will get it from the redis, no need for an API call.
+
 ## Used technologies
 
 #### Client
