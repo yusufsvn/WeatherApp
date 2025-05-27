@@ -17,9 +17,12 @@ This project is a modern weather app that displays 1-day weather information for
 - Asp.Net Core, Redis, VisualCrossing Api, LocationIQ Api
 
 ## Images
+
+**Location Result**
+![resim](https://github.com/user-attachments/assets/1bd69875-27c9-4457-babf-0353f2a5a59a)
+**Enter city Name**
 ![Pasted image 20250527212125](https://github.com/user-attachments/assets/f86b689a-4d8c-4146-8ff2-27741baaddb5)
-![Pasted image 20250525234636](https://github.com/user-attachments/assets/77a7e219-1b05-4583-8d0c-e2a96750a4e1)
-![Pasted image 20250525234601](https://github.com/user-attachments/assets/b9deb44f-1d7c-475f-ac1c-21ea6f5acbca)
-![Pasted image 20250525234659](https://github.com/user-attachments/assets/838d70c5-d031-4b33-afac-18854ec55fb6)
+![resim](https://github.com/user-attachments/assets/902c50b0-40bb-4210-a8dd-52adff449ffa)
+![resim](https://github.com/user-attachments/assets/58ae3fce-32cb-47a9-a3dd-d810bd01ff5c)
 
 
